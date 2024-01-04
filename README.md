@@ -1,5 +1,5 @@
 # nix-flakes-colorscheme
-Populars colorschemes:uz
+Populars colorschemes:
 1. [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
 2. [Kauz](https://github.com/buntec/kauz)
 3. [Nightfox](https://github.com/EdenEast/nightfox.nvim)
