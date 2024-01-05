@@ -1,27 +1,33 @@
 { lib, ... }:
-with lib; rec {
-  # Creates an option with a nullable type that defaults to null.
-  mkNullOrOption = type: desc:
-    lib.mkOption {
-      type = lib.types.nullOr type;
-      default = null;
-      description = desc;
+with lib; {
+
+  mkFishEnable = theme:
+    mkEnableOption "Whether to enable ${theme} colorscheme for Fish";
+
+  mkTmuxEnable = theme:
+    mkEnableOption "Whether to enable ${theme} colorscheme for Tmux";
+
+  mkKittyEnable = theme:
+    mkEnableOption "Whether to enable ${theme} colorscheme for Kitty";
+
+  mkNeovimEnable = theme:
+    mkEnableOption "Whether to enable ${theme} colorscheme for Neovim";
+
+  mkNeovimLuaConfig = theme:
+    mkOption {
+      types = types.lines;
+      description = "Extra lua config for colorscheme ${theme}";
+      default = "";
+      example = ''
+        require("${theme}").setup({})
+      '';
     };
 
-  mkIfNonNull' = x: y: (mkIf (x != null) y);
-
-  mkIfNonNull = x: (mkIfNonNull' x x);
-
-  ifNonNull' = x: y: if (x == null) then null else y;
-
-  mkCompositeOption = desc: options:
-    mkNullOrOption (types.submodule { inherit options; }) desc;
-
-  mkNullOrLua = desc:
-    lib.mkOption {
-      type = lib.types.nullOr nixvimTypes.strLua;
-      default = null;
-      description = desc;
-      apply = mkRaw;
+  mkVariantOption = theme: variants:
+    mkOption {
+      default = builtins.head (variants);
+      type = types.enum (variants);
+      description = "${theme} variant";
     };
+
 }

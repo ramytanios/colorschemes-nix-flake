@@ -3,48 +3,28 @@ inputs:
 with lib;
 
 let
+  theme = "Tokyonight";
   cfg = config.colorscheme.tokyonight;
+
+  inherit (cfg) style;
+
+  tk = inputs.tokyonight;
+  styles = [ "day" "moon" "night" "storm" ];
+
   isFish = cfg.fish.enable;
   isKitty = cfg.kitty.enable;
   isTmux = cfg.tmux.enable;
   isNeovim = cfg.neovim.enable;
-  inherit (cfg) style;
-  tk = inputs.tokyonight;
-  styles = [ "day" "moon" "night" "storm" ];
 
 in {
   options.colorscheme.tokyonight = {
 
-    style = mkOption {
-      default = "storm";
-      type = types.enum (styles);
-      example = ''
-        "storm", "day", "moon" or "night"
-      '';
-      description = "Tokyonight style";
-    };
-
-    fish.enable =
-      mkEnableOption "Whether to enable Tokyonight colorscheme for Fish";
-    kitty.enable =
-      mkEnableOption "Whether to enable Tokyonight colorscheme for Kitty";
-    tmux.enable =
-      mkEnableOption "Whether to enable Tokyonight colorscheme for Tmux";
-    neovim.enable =
-      mkEnableOption "Whether to enable the Tokyonight colorscheme for Neovim";
-    neovim.extraLua = mkOption {
-      type = types.lines;
-      default = "";
-      example = ''
-          require("tokyonight").setup({
-          -- disable italic for functions
-          styles = {
-            functions = {}
-          }
-        })
-      '';
-      description = "Extra lua configuration for the Tokyonight colorscheme.";
-    };
+    style = mkVariantOption theme styles;
+    fish.enable = mkFishEnable theme;
+    kitty.enable = mkKittyEnable theme;
+    tmux.enable = mkTmuxEnable theme;
+    neovim.enable = mkNeovimEnable theme;
+    neovim.extraLua = mkNeovimLuaConfig theme;
 
   };
 
