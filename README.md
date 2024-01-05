@@ -1,9 +1,9 @@
 # nix-flakes-colorscheme
 Populars colorschemes:
-1. [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
-2. [Kauz](https://github.com/buntec/kauz)
-3. [Nightfox](https://github.com/EdenEast/nightfox.nvim)
-4. [Tokyo night](https://github.com/folke/tokyonight.nvim)
+1. [Kauz](https://github.com/buntec/kauz)
+2. [Nightfox](https://github.com/EdenEast/nightfox.nvim)
+3. [Tokyo night](https://github.com/folke/tokyonight.nvim)
+1. [Kanagawa](https://github.com/rebelot/kanagawa.nvim)(**TODO**)
 
 distributed as a nix flake exposing a [home-manager](https://github.com/nix-community/home-manager) module.
 

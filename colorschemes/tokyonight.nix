@@ -1,5 +1,4 @@
-inputs:
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, tokyonight, libcore, ... }:
 with lib;
 
 let
@@ -8,7 +7,7 @@ let
 
   inherit (cfg) style;
 
-  tk = inputs.tokyonight;
+  tk = tokyonight;
   styles = [ "day" "moon" "night" "storm" ];
 
   isFish = cfg.fish.enable;
@@ -17,7 +16,7 @@ let
   isNeovim = cfg.neovim.enable;
 
 in {
-  options.colorscheme.tokyonight = {
+  options.colorscheme.tokyonight = with libcore; {
 
     style = mkVariantOption theme styles;
     fish.enable = mkFishEnable theme;

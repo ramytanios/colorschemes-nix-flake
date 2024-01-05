@@ -1,5 +1,4 @@
-inputs:
-{ lib, pkgs, config, ... }:
+{ lib, config, kauz, libcore, ... }:
 with lib;
 
 let
@@ -13,9 +12,9 @@ let
   isNeovim = cfg.neovim.enable;
 
 in {
-  imports = [ inputs.kauz.homeModules.default ];
+  imports = [ kauz.homeModules.default ];
 
-  options.colorscheme.kauz = {
+  options.colorscheme.kauz = with libcore; {
 
     fish.enable = mkFishEnable theme;
     kitty.enable = mkKittyEnable theme;

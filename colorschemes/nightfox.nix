@@ -1,5 +1,4 @@
-inputs:
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, nightfox, libcore,... }:
 with lib;
 
 let
@@ -9,7 +8,7 @@ let
 
   inherit (cfg) style;
 
-  nf = inputs.nightfox;
+  nf = nightfox;
   styles =
     [ "nightfox" "dayfox" "dawnfox" "duskfox" "nordfox" "terafox" "carbonfox" ];
 
@@ -19,7 +18,7 @@ let
   isNeovim = cfg.neovim.enable;
 
 in {
-  options.colorscheme.nightfox = {
+  options.colorscheme.nightfox = with libcore; {
 
     style = mkVariantOption theme styles;
     fish.enable = mkFishEnable theme;
