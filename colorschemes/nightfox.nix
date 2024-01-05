@@ -30,21 +30,26 @@ in {
 
   };
 
-  config = mkIf isKitty {
-    programs.kitty.extraConfig = ''
-      include ${nf}/extra/${style}/kitty.conf;
-    '';
-  } // mkIf isFish {
-    programs.fish.interactiveShellInit =
-      builtins.readFile "${nf}/extra/${style}/${style}.fish";
-  } // mkIf isTmux {
-    programs.tmux.extraConfig =
-      builtins.readFile "${nf}/extra/${style}/${style}.tmux";
-  } // mkIf isNeovim {
-    programs.neovim.plugins = [ pkgs.vimPlugins.nightfox-nvim ];
-    programs.neovim.extraLuaConfig = ''
-      ${cfg.extraLua}
-      vim.cmd.colorscheme("nightfox-${style}")
-    '';
-  };
+  config = mkMerge [
+    (mkIf isKitty {
+      programs.kitty.extraConfig = ''
+        include ${nf}/extra/${style}/kitty.conf;
+      '';
+    })
+    (mkIf isFish {
+      programs.fish.interactiveShellInit =
+        builtins.readFile "${nf}/extra/${style}/${style}.fish";
+    })
+    (mkIf isTmux {
+      programs.tmux.extraConfig =
+        builtins.readFile "${nf}/extra/${style}/${style}.tmux";
+    })
+    (mkIf isNeovim {
+      programs.neovim.plugins = [ pkgs.vimPlugins.nightfox-nvim ];
+      programs.neovim.extraLuaConfig = ''
+        ${cfg.extraLua}
+        vim.cmd.colorscheme("nightfox-${style}")
+      '';
+    })
+  ];
 }
