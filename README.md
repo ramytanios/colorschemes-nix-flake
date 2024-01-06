@@ -1,4 +1,3 @@
-# nix-flakes-colorscheme
 Supported colorschemes:
 1. [Kauz](https://github.com/buntec/kauz)
 2. [Nightfox](https://github.com/EdenEast/nightfox.nvim)
