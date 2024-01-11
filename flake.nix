@@ -19,20 +19,18 @@
   outputs = { nixpkgs, tokyonight, nightfox, kauz, ... }:
     let libcore = import ./lib/default.nix { inherit (nixpkgs) lib; };
     in {
-      homeModules = {
-        default = {
-          tokyonight = import ./colorschemes/tokyonight.nix {
-            inherit tokyonight;
-            inherit libcore;
-          };
-          nightfox = import ./colorschemes/nightfox.nix {
-            inherit nightfox;
-            inherit libcore;
-          };
-          kauz = import ./colorschemes/kauz.nix {
-            inherit kauz;
-            inherit libcore;
-          };
+      homeModules.default = {
+        tokyonight = import ./colorschemes/tokyonight.nix {
+          inherit tokyonight;
+          inherit libcore;
+        };
+        nightfox = import ./colorschemes/nightfox.nix {
+          inherit nightfox;
+          inherit libcore;
+        };
+        kauz = import ./colorschemes/kauz.nix {
+          inherit kauz;
+          inherit libcore;
         };
       };
 
