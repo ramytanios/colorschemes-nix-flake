@@ -16,24 +16,22 @@
     kauz = { url = "github:buntec/kauz"; };
   };
 
-  outputs = inputs@{ nixpkgs, tokyonight, nightfox, kauz, ... }:
+  outputs = { nixpkgs, tokyonight, nightfox, kauz, ... }:
     let libcore = import ./lib/default.nix { inherit (nixpkgs) lib; };
     in {
       homeModules = {
-        default = {
-          tokyonight = import ./colorschemes/tokyonight.nix {
-            inherit tokyonight;
-            inherit libcore;
-          };
-          nightfox = import ./colorschemes/nightfox.nix {
-            inherit nightfox;
-            inherit libcore;
-          };
-          kauz = import ./colorschemes/kauz.nix {
-            inherit kauz;
-            inherit libcore;
-          } { };
+        tokyonight.default = import ./colorschemes/tokyonight.nix {
+          inherit tokyonight;
+          inherit libcore;
         };
+        nightfox.default = import ./colorschemes/nightfox.nix {
+          inherit nightfox;
+          inherit libcore;
+        };
+        kauz.default = import ./colorschemes/kauz.nix {
+          inherit kauz;
+          inherit libcore;
+        } { };
       };
 
       overlays = { kauz.default = kauz.overlays.default; };
