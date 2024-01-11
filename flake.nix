@@ -20,17 +20,19 @@
     let libcore = import ./lib/default.nix { inherit (nixpkgs) lib; };
     in {
       homeModules = {
-        tokyonight.default = import ./colorschemes/tokyonight.nix {
-          inherit tokyonight;
-          inherit libcore;
-        };
-        nightfox.default = import ./colorschemes/nightfox.nix {
-          inherit nightfox;
-          inherit libcore;
-        };
-        default.kauz = import ./colorschemes/kauz.nix {
-          inherit kauz;
-          inherit libcore;
+        default = {
+          tokyonight = import ./colorschemes/tokyonight.nix {
+            inherit tokyonight;
+            inherit libcore;
+          };
+          nightfox = import ./colorschemes/nightfox.nix {
+            inherit nightfox;
+            inherit libcore;
+          };
+          kauz = import ./colorschemes/kauz.nix {
+            inherit kauz;
+            inherit libcore;
+          };
         };
       };
 
