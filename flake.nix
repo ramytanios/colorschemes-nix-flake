@@ -17,8 +17,7 @@
   };
 
   outputs = { tokyonight, nightfox, kauz, ... }:
-    let
-      libcore = import ./lib/default.nix;
+    let libcore = import ./lib/default.nix;
     in {
       homeModules = {
         colorscheme = {
@@ -26,6 +25,10 @@
           nightfox = import ./colorschemes/nightfox.nix nightfox libcore;
           kauz = import ./colorschemes/kauz.nix kauz libcore;
         };
+      };
+
+      overlays = {
+        kauz.default = kauz.overlays.default;
       };
     };
 }
