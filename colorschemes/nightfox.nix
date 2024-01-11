@@ -1,4 +1,5 @@
-{ lib, pkgs, config, nightfox, libcore,... }:
+nightfox: libcore:
+{ lib, pkgs, config, ... }:
 with lib;
 
 let

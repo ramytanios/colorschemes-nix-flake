@@ -1,4 +1,5 @@
-{ lib, config, kauz, libcore, ... }:
+kauz: libcore:
+{ lib, config, ... }:
 with lib;
 
 let

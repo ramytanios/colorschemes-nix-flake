@@ -1,4 +1,5 @@
-{ lib, pkgs, config, tokyonight, libcore, ... }:
+tokyonight: libcore:
+{ lib, pkgs, config,... }:
 with lib;
 
 let
