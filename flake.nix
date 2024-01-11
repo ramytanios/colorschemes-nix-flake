@@ -31,7 +31,7 @@
         kauz.default = import ./colorschemes/kauz.nix {
           inherit kauz;
           inherit libcore;
-        } { };
+        };
       };
 
       overlays = { kauz.default = kauz.overlays.default; };

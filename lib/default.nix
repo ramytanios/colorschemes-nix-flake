@@ -25,8 +25,8 @@ with lib; {
 
   mkVariantOption = theme: variants:
     mkOption {
-      default = builtins.head (variants);
-      type = types.enum (variants);
+      default = builtins.head variants;
+      type = types.enum variants;
       description = "${theme} variant";
     };
 
