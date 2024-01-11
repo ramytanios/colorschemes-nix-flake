@@ -1,6 +1,6 @@
 nightfox: libcore:
-{ lib, pkgs, config, ... }:
-with lib;
+{ pkgs, config, ... }:
+with pkgs.lib;
 
 let
 

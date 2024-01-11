@@ -1,6 +1,5 @@
 kauz: libcore:
-{ lib, config, ... }:
-with lib;
+{ config, ... }:
 
 let
 
