@@ -16,7 +16,7 @@
     kauz = { url = "github:buntec/kauz"; };
   };
 
-  outputs = { nixpkgs, tokyonight, nightfox, kauz, ... }:
+  outputs = inputs@{ nixpkgs, tokyonight, nightfox, kauz, ... }:
     let libcore = import ./lib/default.nix { inherit (nixpkgs) lib; };
     in {
       homeModules = {
