@@ -28,7 +28,7 @@
           inherit nightfox;
           inherit libcore;
         };
-        kauz.default = import ./colorschemes/kauz.nix {
+        default.kauz = import ./colorschemes/kauz.nix {
           inherit kauz;
           inherit libcore;
         };
