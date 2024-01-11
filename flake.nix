@@ -21,10 +21,18 @@
     in {
       homeModules = {
         default = {
-          tokyonight =
-            import ./colorschemes/tokyonight.nix tokyonight libcore { };
-          nightfox = import ./colorschemes/nightfox.nix nightfox libcore { };
-          kauz = import ./colorschemes/kauz.nix kauz libcore { };
+          tokyonight = import ./colorschemes/tokyonight.nix {
+            inherit tokyonight;
+            inherit libcore;
+          };
+          nightfox = import ./colorschemes/nightfox.nix {
+            inherit nightfox;
+            inherit libcore;
+          };
+          kauz = import ./colorschemes/kauz.nix {
+            inherit kauz;
+            inherit libcore;
+          };
         };
       };
 

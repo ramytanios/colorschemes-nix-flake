@@ -1,4 +1,4 @@
-kauz: libcore:
+{ kauz, libcore }:
 { config, ... }:
 
 let

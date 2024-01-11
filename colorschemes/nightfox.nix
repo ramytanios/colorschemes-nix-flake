@@ -1,4 +1,4 @@
-nightfox: libcore:
+{ nightfox, libcore }:
 { pkgs, config, ... }:
 with pkgs.lib;
 
