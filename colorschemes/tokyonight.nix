@@ -8,7 +8,6 @@ let
 
   inherit (cfg) style;
 
-  tk = tokyonight;
   styles = [ "day" "moon" "night" "storm" ];
 
   isFish = cfg.fish.enable;
@@ -31,16 +30,16 @@ in {
   config = mkMerge [
     (mkIf isKitty {
       programs.kitty.extraConfig = ''
-        include ${tk}/extras/kitty/tokyonight_${style}.conf;
+        include ${tokyonight}/extras/kitty/tokyonight_${style}.conf;
       '';
     })
     (mkIf isFish {
       programs.fish.interactiveShellInit =
-        builtins.readFile "${tk}/extras/fish/tokyonight_${style}.fish";
+        builtins.readFile "${tokyonight}/extras/fish/tokyonight_${style}.fish";
     })
     (mkIf isTmux {
       programs.tmux.extraConfig =
-        builtins.readFile "${tk}/extras/tmux/tokyonight_${style}.tmux";
+        builtins.readFile "${tokyonight}/extras/tmux/tokyonight_${style}.tmux";
     })
     (mkIf isNeovim {
       programs.neovim.plugins = [ pkgs.vimPlugins.tokyonight-nvim ];
