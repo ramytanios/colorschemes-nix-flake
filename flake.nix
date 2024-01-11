@@ -16,16 +16,17 @@
     kauz = { url = "github:buntec/kauz"; };
   };
 
-  libcore = import ./lib/default.nix;
-
-  outputs = { libcore, tokyonight, nightfox, kauz, ... }: {
-    homeModules = {
-      colorscheme = {
-        tokyonight = import ./colorschemes/tokyonight.nix tokyonight libcore;
-        nightfox = import ./colorschemes/nightfox.nix nightfox libcore;
-        kauz = import ./colorschemes/kauz.nix kauz libcore;
+  outputs = { tokyonight, nightfox, kauz, ... }:
+    let
+      libcore = import ./lib/default.nix;
+    in {
+      homeModules = {
+        colorscheme = {
+          tokyonight = import ./colorschemes/tokyonight.nix tokyonight libcore;
+          nightfox = import ./colorschemes/nightfox.nix nightfox libcore;
+          kauz = import ./colorschemes/kauz.nix kauz libcore;
+        };
       };
     };
-  };
 }
 

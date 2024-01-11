@@ -1,0 +1,77 @@
+{
+  "nodes": {
+    "kauz": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1704475005,
+        "narHash": "sha256-TcMv7e+6dm3soVXFaOyS097n4LA8vJ1jQJOWkpGWK14=",
+        "owner": "buntec",
+        "repo": "kauz",
+        "rev": "0787e60bfc26996b3c943f3ac631b35336ed43e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "buntec",
+        "repo": "kauz",
+        "type": "github"
+      }
+    },
+    "nightfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704951965,
+        "narHash": "sha256-u9cWMOrbc/2vkVpDqWLcdXlmH4OyDkGuuN95UthEiFc=",
+        "owner": "EdenEast",
+        "repo": "nightfox.nvim",
+        "rev": "1e650316680a777fb50e4ab35d82ecf32da485b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "EdenEast",
+        "repo": "nightfox.nvim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1700108881,
+        "narHash": "sha256-+Lqybl8kj0+nD/IlAWPPG/RDTa47gff9nbei0u7BntE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7414e9ee0b3e9903c24d3379f577a417f0aae5f1",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "kauz": "kauz",
+        "nightfox": "nightfox",
+        "tokyonight": "tokyonight"
+      }
+    },
+    "tokyonight": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698229236,
+        "narHash": "sha256-axjZVZOI+WIv85FfMG+lxftDKlDIw/HzQKyJVFkL33M=",
+        "owner": "folke",
+        "repo": "tokyonight.nvim",
+        "rev": "f247ee700b569ed43f39320413a13ba9b0aef0db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "tokyonight.nvim",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
