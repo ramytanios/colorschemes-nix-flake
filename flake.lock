@@ -21,11 +21,11 @@
     "nightfox": {
       "flake": false,
       "locked": {
-        "lastModified": 1704951965,
-        "narHash": "sha256-u9cWMOrbc/2vkVpDqWLcdXlmH4OyDkGuuN95UthEiFc=",
+        "lastModified": 1704982694,
+        "narHash": "sha256-H9S0r2evXGMRDOmoFU98+sbEmXkozinMQyiRqFy0oLg=",
         "owner": "EdenEast",
         "repo": "nightfox.nvim",
-        "rev": "1e650316680a777fb50e4ab35d82ecf32da485b8",
+        "rev": "a4bc2bd3d7ff1770ae104068458d3b0b8f8ec00d",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1704842529,
-        "narHash": "sha256-OTeQA+F8d/Evad33JMfuXC89VMetQbsU4qcaePchGr4=",
+        "lastModified": 1705566941,
+        "narHash": "sha256-CLNtVRDA8eUPk+bxsCCZtRO0Cp+SpHdn1nNOLoFypLs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "eabe8d3eface69f5bb16c18f8662a702f50c20d5",
+        "rev": "b06ff4bf8f4ad900fe0c2a61fc2946edc3a84be7",
         "type": "github"
       },
       "original": {
