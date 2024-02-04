@@ -20,7 +20,7 @@
     let libcore = import ./lib/default.nix { inherit (nixpkgs) lib; };
     in {
       homeModules.default = {
-        tokyonight = import ./colorschemes/tokyonight.nix {
+        tknight = import ./colorschemes/tokyonight.nix {
           inherit tokyonight;
           inherit libcore;
         };
