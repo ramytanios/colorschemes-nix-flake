@@ -4,7 +4,7 @@ with pkgs.lib;
 
 let
   theme = "Tokyonight";
-  cfg = config.colorscheme;
+  cfg = config.colorscheme.tokyonight;
 
   inherit (cfg) style;
 
