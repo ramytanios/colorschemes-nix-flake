@@ -32,7 +32,7 @@ in {
   config = mkMerge [
     (mkIf isKitty {
       programs.kitty.extraConfig = ''
-        include ${nightfox}/extra/${style}/kitty.conf;
+        include ${nightfox}/extra/${style}/kitty.conf
       '';
     })
     (mkIf isFish {
