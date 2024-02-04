@@ -4,7 +4,7 @@ with pkgs.lib;
 
 let
   theme = "Tokyonight";
-  cfg = config.colorscheme.tokyonight;
+  cfg = config.colorscheme;
 
   inherit (cfg) style;
 
@@ -16,7 +16,7 @@ let
   isNeovim = cfg.neovim.enable;
 
 in {
-  options.colorscheme.tokyonight = with libcore; {
+  options.colorscheme = with libcore; {
 
     style = mkVariantOption theme styles;
     fish.enable = mkFishEnable theme;
